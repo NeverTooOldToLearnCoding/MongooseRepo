@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mongoose Repository</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+            .error {
+                color: red;
+            }
+        h3 {
+            font-style: bold;
+        }
+            </style>
+
+</head>
+
+<body>
+
+<h1>Welcome to the Mongoose Repository</h1>
+
+  <% for (var i in animals){ %>
+
+    <p><%= animals[i].animal%></p>
+    <p><a href="/animal/<%= animals[i]._id%>">
+      <img src = "<%= animals[i].imgurl %>" width="50%" height="50%" ></a></p>
+      <a href="/animal/destroy/<%= animals[i]._id%>">Delete this animal</a>
+      <a href = "/animal/edit/<%= animals[i]._id%>">Edit this <%= animals[i].animal%>.</a>
+
+  <% } %>
+
+<a href = "/view">Create a New Animal.</a>
+
+</body>
+</html>
